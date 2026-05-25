@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+.venv/
+venv/
+env/
+.env
+.env.*
+!.env.example
+
+# Generated app data
+data/chroma/
+
+# Keep editable source documents tracked.
+!data/
+!data/source_docs/
+!data/source_docs/**
+
+# Node / package manager
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# IDE
+.idea/
+.vscode/
+.DS_Store

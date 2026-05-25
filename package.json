@@ -1,0 +1,10 @@
+{
+  "name": "graphrag-mini-lab",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "neo4j": "docker compose up -d neo4j",
+    "dev": ".venv/bin/python server.py",
+    "start": ".venv/bin/python server.py"
+  }
+}

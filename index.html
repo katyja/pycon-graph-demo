@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Python Might Not Be Python</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="shell">
+    <main class="workspace">
+      <section class="query-bar" aria-label="Ask a question">
+        <div class="query-row">
+          <label for="queryInput">Question</label>
+          <div class="query-controls">
+            <input id="queryInput" value="What is Python?">
+          </div>
+        </div>
+
+        <div class="presets" aria-label="Example questions">
+          <button type="button" class="preset active" data-query="What is Python?">What is Python?</button>
+          <button type="button" class="preset" data-query="How is Maya connected to data analysis?">Maya to analysis</button>
+          <button type="button" class="preset" data-query="How is Maya connected to backend services?">Maya to backend</button>
+          <button type="button" class="preset" data-query="What is Python used for?">Python usage</button>
+        </div>
+      </section>
+
+      <section class="comparison" aria-label="Comparison results">
+        <article class="panel vector-panel">
+          <div class="panel-header">
+            <div>
+              <h3>Vector retrieval</h3>
+              <p>Chroma searches OpenAI embeddings generated from source docs.</p>
+            </div>
+            <span class="pill">similarity</span>
+          </div>
+          <div id="vectorAnswer" class="answer"></div>
+          <div id="vectorResults" class="result-list"></div>
+        </article>
+
+        <article class="panel graph-panel">
+          <div class="panel-header">
+            <div>
+              <h3>GraphRAG</h3>
+              <p>Neo4j follows relationships extracted from source docs.</p>
+            </div>
+            <span class="pill">relationships</span>
+          </div>
+          <div id="graphAnswer" class="answer"></div>
+          <div id="pathSteps" class="path-steps"></div>
+        </article>
+      </section>
+
+      <section class="graph-workbench" aria-label="Knowledge graph explorer">
+        <div class="panel-header">
+          <div>
+            <h3>Generated knowledge graph</h3>
+            <p>Click a generated node to see its extracted relationships.</p>
+          </div>
+          <span id="selectedNodeLabel" class="pill">Python selected</span>
+        </div>
+        <div class="graph-layout">
+          <div class="graph-canvas">
+            <svg id="graphSvg" viewBox="0 0 780 430" role="img" aria-label="Interactive knowledge graph"></svg>
+          </div>
+          <aside class="inspector">
+            <h4 id="inspectorTitle">Python</h4>
+            <p id="inspectorDescription">Programming language entity.</p>
+            <div id="inspectorFacts" class="fact-list"></div>
+          </aside>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
